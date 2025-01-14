@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 import openai
 import os
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 # Set your OpenAI API key
 openai.api_key=os.getenv('API_KEY')
 # Serve the index.html from the same folder
